@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CalcComponent } from './calc/calc.component';
+import { IonicModule } from '@ionic/angular';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { CalcComponent } from './calc/calc.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    IonicModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

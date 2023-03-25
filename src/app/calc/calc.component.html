@@ -1,8 +1,45 @@
 <div>
-  <form>
-    <input type="number" name="num1" [(ngModel)]="num1">
-    <input type="number" name="num2" [(ngModel)]="num2">
-    <button (click)="somar()">Somar</button>
-    <input [value]="soma">
-  </form>
+  <div class="form-box">
+    <div class="form-calc">
+        <form>
+            <h2>Calculadora Básica</h2>
+
+            <div class="input-box">
+              <input type="number" name="num1" [(ngModel)]="num1" required>
+                <label>Número 1</label>
+            </div><!--input-box-->
+            
+            <div class="input-box">
+              <input type="number" name="num2" [(ngModel)]="num2" required>
+                <label>Número 2</label> 
+            </div><!--input-box-->
+
+            <div class="op-box">
+                <button id="btnNada" (click)="mostrarOperacao()">Selecione a operação</button>
+                <button id="btnSomar" (click)="somar()">Somar</button>
+                <button id="btnSubtrair" (click)="subtrair()">Subtrair</button>
+                <button id="btnMultiplicar" (click)="multiplicar()">Multiplicar</button>
+                <button id="btnDividir" (click)="dividir()">Dividir</button>
+                <button id="btnRestoDiv" (click)="restodiv()">Resto de Divisão</button>
+                
+                <ion-icon name="chevron-down-outline" (click)="mostrarOperacao()"></ion-icon>
+                <ion-icon name="trash-bin-outline" id="trash-icon" (click)="limpar()"></ion-icon>
+
+                <ul id="listaOp">
+                    <li (click)="selecionarOperacao('Somar')">Somar</li>
+                    <li (click)="selecionarOperacao('Subtrair')">Subtrair</li>
+                    <li (click)="selecionarOperacao('Multiplicar')">Multiplicar</li>
+                    <li (click)="selecionarOperacao('Dividir')">Dividir</li>
+                    <li (click)="selecionarOperacao('RestoDivisao')">Resto de Divisão</li>
+                </ul>
+            </div><!--op-box-->
+
+              <div class="resp-box">
+                  <h2>Resultado</h2>
+                  <input [value]="resp" readonly>
+              </div><!--resp-box-->
+          </form>
+      </div><!--form-calc-->
+  </div><!--form-box-->
+
 </div>
